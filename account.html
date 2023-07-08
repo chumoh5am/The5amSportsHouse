@@ -23,7 +23,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a class="active" href="account.html">Account</a></li>
                 <li id="lg-bag"><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
                 <a href="#" id="close"><i class="far fa-times"></i></a>
@@ -34,14 +34,13 @@
             <i id="bar" class="fas fa-outdent"></i>
         </div>
     </section>
-    <section>
-    <div class="account-page">
-        <div class="container">
+    
+    <section id="account-page" class="section-p1">
             <div class="row">
-                <div class="col-2">
-                    <img src="img/image1.png" width="100%">
+                <div class="col1">
+                    <img src="img/image1.png" width="50%">
                 </div>
-                <div class="col-2">
+                <div class="col2">
                     <div class="form-container">
                         <div class="form-btn">
                             <span onclick="login()">Login</span>
@@ -59,13 +58,11 @@
                             <input type="text" placeholder="Username">
                             <input type="email" placeholder="Email">
                             <input type="password" placeholder="Password">
-                            <button type="submit" class="btn">Register</button>
+                            <button class="btn" type="submit" >Register</button>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
     </section>
     
     <section id="newsletter" class="section-p1 section-m1">
@@ -89,11 +86,11 @@
             <div class="follow">
                 <h4>Follow Us</h4>
                 <div class="icon">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-youtube"></i>
-                </div>
+                    <a href="https://web.facebook.com/profile.php?id=100086588497536" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/Chumoh_5am" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/chumoh5am/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCjOavRSSATdq40C7X_odKYQ" target="_blank"><i class="fab fa-youtube" ></i>
+                    </div></a>
             </div>
         </div>
 
@@ -108,8 +105,8 @@
 
         <div class="col">
             <h4>My Account</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View Cart</a>
+            <a href="account.html">Sign In</a>
+            <a href="cart.html">View Cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track My Order</a>
             <a href="#">Help</a>
@@ -130,6 +127,24 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Toggle Form -->
+    <script>
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator = document.getElementById("Indicator");
+        function register() {
+            RegForm.style.transform = "translatex(0px)";
+            LoginForm.style.transform = "translatex(0px)";
+            Indicator.style.transform = "translateX(100px)";
+
+        }
+        function login() {
+            RegForm.style.transform = "translatex(300px)";
+            LoginForm.style.transform = "translatex(300px)";
+            Indicator.style.transform = "translate(0px)";
+
+        }
+    </script>
+
 </body>
 </html>
