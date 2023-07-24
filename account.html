@@ -16,7 +16,7 @@
 <body>
     
     <section id="header">
-        <a href="#"><img src="img/logo.png" class="logo" alt=""></a>
+        <a href="index.html"><img src="img/logo.png" class="logo" alt=""></a>
 
         <div>
             <ul id="navbar">
@@ -54,10 +54,11 @@
                             <a href="">Forget Password</a>
                         </form>
 
-                        <form id="RegForm">
-                            <input type="text" placeholder="Username">
-                            <input type="email" placeholder="Email">
-                            <input type="password" placeholder="Password">
+                        <form action="https://sheetdb.io/api/v1/ep73z60yldcnt" method="POST"id="RegForm">
+                            <input type="text" placeholder="Username" name="data[name]">
+                            <input type="email" placeholder="Email" name="data[email]" required>
+                            <input type="password" placeholder="Password" name="data[psw]" required>
+                            <input type="password" placeholder="Repeat Password" name="data[psw repeat]" required>
                             <button class="btn" type="submit" >Register</button>
                         </form>
                     </div>
@@ -144,6 +145,23 @@
             Indicator.style.transform = "translate(0px)";
 
         }
+    </script>
+
+    <script>
+        var form = document.getElementById('RegForm');
+    form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("RegForm")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+        // you can put any JS code here
+        window.open('shop.html', '_blank');
+
+    });
+    });
     </script>
 
     <script src="script.js"></script>
